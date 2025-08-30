@@ -70,3 +70,11 @@ Thumbs.db
 
 # Project-specific sensitive files
 config.json
+
+# User-specified exclusions
+garbage/
+data/
+pickel_files/
+best_model/
+motion_ai/api/private_*
+motion_ai/api/keys.py
