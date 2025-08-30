@@ -48,98 +48,25 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy:
-.scrapy
-
-# Sphinx
-docs/_build/
-
-# PyBuilder
-target/
-
-# IPython
-profile_default/
-ipython_config.py
-
-# Jupyter
+# Jupyter Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# poetry
-poetry.lock
-
-# PDM
-pdm.lock
-__pypackages__/
-
-# Celery
-celerybeat-schedule
-
-# dotenv
+# Environments
 .env
-.env.*
-*.env
-
-# virtualenv
 .venv/
+env/
 venv/
 ENV/
-env/
 env.bak/
 venv.bak/
 
-# Spyder
-.spyderproject
-.spyproject
-
-# Rope
-.ropeproject
-
-# mkdocs
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre
-.pyre/
-
-# pytype
-.pytype/
-
-# VSCode
+# IDE / editor settings
 .vscode/
+.idea/
 
-# OS
+# OS files
 .DS_Store
 Thumbs.db
 
-# Project specific (adjust as needed)
-best_model/
-data/
-garbage/
-motion_ai/
-pickel_files/
-ppt/
-test_files/
+# Project-specific sensitive files
+config.json
