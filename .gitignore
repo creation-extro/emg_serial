@@ -71,10 +71,40 @@ Thumbs.db
 # Project-specific sensitive files
 config.json
 
-# User-specified exclusions
+# User-specified exclusions - Exclude garbage, data, and API files
 garbage/
 data/
+*.csv
+*.pkl
+*.h5
+*.hdf5
+*.json
 pickel_files/
 best_model/
+models/
+checkpoints/
+
+# API and sensitive files
 motion_ai/api/private_*
 motion_ai/api/keys.py
+motion_ai/api/secrets.py
+motion_ai/api/config.py
+*.env
+*.key
+*.secret
+
+# Log files and temporary data
+*.log
+*.tmp
+*.temp
+demo_logs/
+logs/
+temp/
+tmp/
+
+# Large data files
+*.dat
+*.bin
+*.npy
+*.npz
+*.mat

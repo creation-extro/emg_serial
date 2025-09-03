@@ -11,7 +11,7 @@ This script demonstrates the full Motion AI system with:
 - Profile switching
 - Drift detection
 - Safety event logging
-- Combined dashboard with CRISPR RL leaderboard and Motion AI live feed
+- Dashboard with Motion AI live feed
 
 Usage:
   python demo/final_integrated_demo.py
@@ -169,12 +169,12 @@ class HapticFeedback:
 
 
 class Dashboard:
-    """Combined dashboard for CRISPR RL leaderboard and Motion AI live feed"""
+    """Dashboard for Motion AI live feed"""
     
     def __init__(self):
-        # Set up the figure with two subplots
-        self.fig, (self.ax1, self.ax2) = plt.subplots(2, 1, figsize=(12, 10))
-        self.fig.suptitle('Motion AI + CRISPR RL Dashboard', fontsize=16)
+        # Set up the figure with single subplot
+        self.fig, self.ax1 = plt.subplots(1, 1, figsize=(12, 6))
+        self.fig.suptitle('Motion AI Dashboard', fontsize=16)
         
         # Motion AI subplot
         self.ax1.set_title('Motion AI Live Feed')
@@ -195,32 +195,6 @@ class Dashboard:
         self.gesture_text = self.ax1.text(0.02, 0.95, '', transform=self.ax1.transAxes)
         self.drift_text = self.ax1.text(0.02, 0.90, '', transform=self.ax1.transAxes)
         self.safety_text = self.ax1.text(0.02, 0.85, '', transform=self.ax1.transAxes)
-        
-        # CRISPR RL subplot (leaderboard)
-        self.ax2.set_title('CRISPR RL Leaderboard')
-        self.ax2.axis('off')  # Turn off axis for table
-        
-        # Sample leaderboard data
-        self.leaderboard_data = [
-            ['1', 'AlphaFold3', '98.7%', '0.023', '12.5ms'],
-            ['2', 'DeepMind Bio', '97.2%', '0.031', '14.2ms'],
-            ['3', 'OpenAI Protein', '95.8%', '0.042', '15.1ms'],
-            ['4', 'Google Health', '94.3%', '0.047', '16.8ms'],
-            ['5', 'Stanford ML', '93.1%', '0.052', '17.3ms'],
-        ]
-        
-        # Create the table
-        self.leaderboard_table = self.ax2.table(
-            cellText=self.leaderboard_data,
-            colLabels=['Rank', 'Model', 'Accuracy', 'Loss', 'Latency'],
-            loc='center',
-            cellLoc='center',
-        )
-        
-        # Style the table
-        self.leaderboard_table.auto_set_font_size(False)
-        self.leaderboard_table.set_fontsize(12)
-        self.leaderboard_table.scale(1.2, 2)
         
         # Add legend to EMG plot
         self.ax1.legend(loc='upper right')
@@ -251,15 +225,7 @@ class Dashboard:
         
         return self.emg_lines + [self.gesture_text, self.drift_text, self.safety_text]
     
-    def update_leaderboard(self, new_data=None):
-        """Update the CRISPR RL leaderboard data"""
-        if new_data:
-            self.leaderboard_data = new_data
-            
-            # Update table data
-            for i, row in enumerate(self.leaderboard_data):
-                for j, cell in enumerate(row):
-                    self.leaderboard_table[(i+1, j)].get_text().set_text(cell)
+
     
     def start(self, update_func):
         """Start the dashboard animation"""
