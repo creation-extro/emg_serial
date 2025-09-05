@@ -1,0 +1,137 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Motion AI specific styles */
+.motion-ai-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.gesture-avatar {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.gesture-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.emg-chart {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.safety-status-safe {
+  background: linear-gradient(45deg, #4caf50, #81c784);
+  color: white;
+}
+
+.safety-status-warning {
+  background: linear-gradient(45deg, #ff9800, #ffb74d);
+  color: white;
+}
+
+.safety-status-danger {
+  background: linear-gradient(45deg, #f44336, #ef5350);
+  color: white;
+}
+
+.metrics-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.processing-indicator {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+  
+  .gesture-avatar {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
+
+/* Chart customizations */
+.recharts-tooltip-wrapper {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(0, 0, 0, 0.1);
+}
+
+/* Loading states */
+.loading-skeleton {
+  animation: shimmer 1.5s infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
