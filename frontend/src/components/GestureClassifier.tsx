@@ -32,7 +32,7 @@ const GestureClassifier: React.FC<GestureClassifierProps> = ({
   isProcessing
 }) => {
   // Map gestures to icons and colors
-  const gestureConfig: { [key: string]: { icon: React.ReactNode; color: string; label: string } } = {
+  const gestureConfig: { [key: string]: { icon: React.ReactElement; color: string; label: string } } = {
     'rest': { 
       icon: <Stop />, 
       color: '#9e9e9e', 

@@ -1,6 +1,14 @@
 # Motion AI: EMG Gesture Recognition System
 
-Motion AI is a machine learning system for recognizing hand gestures from EMG (Electromyography) signals. It includes preprocessing, feature extraction, classification, safety layers, adaptation mechanisms, and fault resilience.
+Motion AI is a complete machine learning system for recognizing hand gestures from EMG (Electromyography) signals. It includes both a Python backend with FastAPI and a modern React frontend dashboard.
+
+## 🌟 Complete Full-Stack Application
+
+- **🖥️ Backend**: Python FastAPI with ML models, safety systems, and real-time processing
+- **🌐 Frontend**: React TypeScript dashboard with real-time visualization
+- **🔄 Real-time**: Live EMG signal processing and gesture recognition
+- **🛡️ Safety**: 5-layer safety system with monitoring and alerts
+- **📊 Analytics**: Performance metrics and interactive charts
 
 ## Features
 
